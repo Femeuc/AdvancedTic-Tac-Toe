@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="724011c0-0c46-4535-830b-98302003eb6a" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1WoKtJWsn1455vn7tcw0hPXCcd4" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.AdvancedTicTacToe.engine" />
+      <recent name="com.AdvancedTicTacToe" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Felipe\IdeaProjects\AdvancedTicTacToe\src" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.AdvancedTicTacToe.Main" />
+      <module name="AdvancedTicTacToe" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.AdvancedTicTacToe.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="724011c0-0c46-4535-830b-98302003eb6a" name="Default Changelist" comment="" />
+      <created>1579810720141</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1579810720141</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="485" y="84" key="#com.intellij.ide.util.MemberChooser" timestamp="1580581489949">
+      <screen x="0" y="0" width="1360" height="768" />
+    </state>
+    <state x="485" y="84" key="#com.intellij.ide.util.MemberChooser/0.0.1360.768@0.0.1360.768" timestamp="1580581489949" />
+    <state x="436" y="268" width="422" height="241" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1579900559914">
+      <screen x="0" y="0" width="1280" height="768" />
+    </state>
+    <state x="436" y="268" width="422" height="241" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1280.768@0.0.1280.768" timestamp="1579900559914" />
+    <state width="1316" height="187" key="GridCell.Tab.0.bottom" timestamp="1580584354747">
+      <screen x="0" y="0" width="1360" height="768" />
+    </state>
+    <state width="1236" height="187" key="GridCell.Tab.0.bottom/0.0.1280.768@0.0.1280.768" timestamp="1579903659419" />
+    <state width="1316" height="187" key="GridCell.Tab.0.bottom/0.0.1360.768@0.0.1360.768" timestamp="1580584354747" />
+    <state width="1316" height="187" key="GridCell.Tab.0.center" timestamp="1580584354747">
+      <screen x="0" y="0" width="1360" height="768" />
+    </state>
+    <state width="1236" height="187" key="GridCell.Tab.0.center/0.0.1280.768@0.0.1280.768" timestamp="1579903659419" />
+    <state width="1316" height="187" key="GridCell.Tab.0.center/0.0.1360.768@0.0.1360.768" timestamp="1580584354747" />
+    <state width="1316" height="187" key="GridCell.Tab.0.left" timestamp="1580584354747">
+      <screen x="0" y="0" width="1360" height="768" />
+    </state>
+    <state width="1236" height="187" key="GridCell.Tab.0.left/0.0.1280.768@0.0.1280.768" timestamp="1579903659419" />
+    <state width="1316" height="187" key="GridCell.Tab.0.left/0.0.1360.768@0.0.1360.768" timestamp="1580584354747" />
+    <state width="1316" height="187" key="GridCell.Tab.0.right" timestamp="1580584354747">
+      <screen x="0" y="0" width="1360" height="768" />
+    </state>
+    <state width="1236" height="187" key="GridCell.Tab.0.right/0.0.1280.768@0.0.1280.768" timestamp="1579903659419" />
+    <state width="1316" height="187" key="GridCell.Tab.0.right/0.0.1360.768@0.0.1360.768" timestamp="1580584354747" />
+    <state x="356" y="206" key="com.intellij.ide.util.TipDialog" timestamp="1580232557260">
+      <screen x="0" y="0" width="1360" height="768" />
+    </state>
+    <state x="335" y="206" key="com.intellij.ide.util.TipDialog/0.0.1280.768@0.0.1280.768" timestamp="1579873163615" />
+    <state x="356" y="206" key="com.intellij.ide.util.TipDialog/0.0.1360.768@0.0.1360.768" timestamp="1580232557260" />
+  </component>
+</project>
