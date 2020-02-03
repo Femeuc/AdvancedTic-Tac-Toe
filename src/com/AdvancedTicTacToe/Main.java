@@ -5,8 +5,11 @@ import com.AdvancedTicTacToe.gui.GameWindow;
 import javax.swing.*;
 import java.awt.*;
 
+import static java.lang.Math.floor;
+
 public class Main {
     public static void main(String[] args) {
+
         GameWindow gameWindow = new GameWindow();
 
 
