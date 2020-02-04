@@ -23,6 +23,7 @@ public class GameWindow {
         this.leftPanel = new LeftPanel();
         this.gameFrame.add(boardPanel, BorderLayout.CENTER);
         this.gameFrame.add(leftPanel, BorderLayout.WEST);
+        this.gameFrame.setResizable(false);
         this.gameFrame.setVisible(true);
     }
 }

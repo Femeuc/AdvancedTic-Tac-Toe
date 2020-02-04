@@ -10,7 +10,7 @@ import java.util.List;
 public class BoardPanel extends JPanel {
     private final List<SquarePanel> boardSquares;
 
-    private final int PANEL_WIDTH = (int) Math.floor(GameWindow.X_DIMENSION * 0.8);  // 80% of the screen
+    private final int PANEL_WIDTH = (int) Math.floor(GameWindow.X_DIMENSION * 0.8);  // 80% of the width of the window
     private final int PANEL_HEIGHT = GameWindow.Y_DIMENSION;
     private final Dimension BOARD_PANEL_DIMENSION = new Dimension(PANEL_WIDTH, PANEL_HEIGHT);
 
