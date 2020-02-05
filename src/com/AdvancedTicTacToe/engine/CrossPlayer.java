@@ -1,5 +1,5 @@
 package com.AdvancedTicTacToe.engine;
 
-public abstract class Player {
+public class CrossPlayer extends Player {
 
 }

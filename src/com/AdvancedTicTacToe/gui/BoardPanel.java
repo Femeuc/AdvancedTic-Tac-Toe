@@ -4,8 +4,13 @@ import com.AdvancedTicTacToe.engine.Board;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.util.List;
+
+import static javax.swing.SwingUtilities.isLeftMouseButton;
+import static javax.swing.SwingUtilities.isRightMouseButton;
 
 public class BoardPanel extends JPanel {
     private final List<SquarePanel> boardSquares;
@@ -26,7 +31,12 @@ public class BoardPanel extends JPanel {
         validate();
     }
 
-    public void drawBoard() {
+    public void drawOnSquare(int squareId) {
+        for (SquarePanel squarePanel : boardSquares) {
+            if(squarePanel.squareId == squareId) {
+                squarePanel.drawOnThisSquare();
+            }
+        }
         validate();
         repaint();
     }
@@ -35,7 +45,6 @@ public class BoardPanel extends JPanel {
         private final Dimension SQUARE_PANEL_DIMENSION = new Dimension(10, 10);
         private final Color darkColor = new Color(50, 50, 50);
         private final Color brightColor = new Color(200, 200, 200);
-
         private final int squareId;
 
         SquarePanel(int squareId) {
@@ -44,15 +53,51 @@ public class BoardPanel extends JPanel {
             setPreferredSize(SQUARE_PANEL_DIMENSION);
             setBorder(BorderFactory.createLineBorder(Color.BLACK));
 //            assignSquareColor();
+            addMouseListener(new MouseListener() {
+                @Override
+                public void mouseClicked(MouseEvent mouseEvent) {
+                    if(isRightMouseButton(mouseEvent) || isLeftMouseButton(mouseEvent)) {
+                        SwingUtilities.invokeLater(new Runnable() {
+                            @Override
+                            public void run() {
+                                drawOnSquare(squareId);
+                            }
+                        });
+                    }
+                }
+
+                @Override
+                public void mousePressed(MouseEvent mouseEvent) {
+
+                }
+
+                @Override
+                public void mouseReleased(MouseEvent mouseEvent) {
+
+                }
+
+                @Override
+                public void mouseEntered(MouseEvent mouseEvent) {
+
+                }
+
+                @Override
+                public void mouseExited(MouseEvent mouseEvent) {
+
+                }
+            });
         }
 
         private void assignSquareColor() {
             setBackground(this.squareId % 2 == 0 ? brightColor : darkColor);
         }
 
-        public void drawSquare() {
-            validate();
-            repaint();
+        public void drawOnThisSquare() {
+            ImageIcon icon = new ImageIcon("src/smallCross.PNG");
+            JLabel symbol = new JLabel(icon);
+            add(symbol);
         }
+
     }
+
 }
