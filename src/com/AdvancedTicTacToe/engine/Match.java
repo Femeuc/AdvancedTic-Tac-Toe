@@ -3,14 +3,23 @@ package com.AdvancedTicTacToe.engine;
 public class Match {
     private Player crossPlayer = new CrossPlayer();
     private Player circlePlayer = new CirclePlayer();
-    private static Alliance alliance = Alliance.CROSS;
-    private static Board board = new Board();
+    private Alliance alliance = Alliance.CROSS;
+    private Board board = new Board();
 
-    public static Square getBoardSquare(int squareId) {
-        return board.gameBoard[squareId];
+    public void occupyGameBoardSquare(int squareId) {
+        board.gameBoard[squareId].setAlliance(alliance);
+        setAlliance(alliance.getOppositeAlliance());
     }
 
-    public static void occupyGameBoardSquare(int squareId) {
-        board.gameBoard[squareId].setAlliance(alliance);
+    public Alliance getAlliance() {
+        return alliance;
+    }
+
+    private void setAlliance(Alliance alliance) {
+        this.alliance = alliance;
+    }
+
+    public Board getBoard() {
+        return board;
     }
 }

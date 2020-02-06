@@ -1,6 +1,7 @@
 package com.AdvancedTicTacToe.gui;
 
 import com.AdvancedTicTacToe.engine.Board;
+import com.AdvancedTicTacToe.engine.Match;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,6 +20,8 @@ public class BoardPanel extends JPanel {
     private final int PANEL_HEIGHT = GameWindow.Y_DIMENSION;
     private final Dimension BOARD_PANEL_DIMENSION = new Dimension(PANEL_WIDTH, PANEL_HEIGHT);
 
+    private static Match match = new Match();
+
     public BoardPanel() {
         super(new GridLayout( Board.AMOUNT_OF_ROWS, Board.AMOUNT_OF_COLUNS));
         this.boardSquares = new ArrayList<>();
@@ -31,20 +34,8 @@ public class BoardPanel extends JPanel {
         validate();
     }
 
-    public void drawOnSquare(int squareId) {
-        for (SquarePanel squarePanel : boardSquares) {
-            if(squarePanel.squareId == squareId) {
-                squarePanel.drawOnThisSquare();
-            }
-        }
-        validate();
-        repaint();
-    }
-
     private class SquarePanel extends JPanel {
         private final Dimension SQUARE_PANEL_DIMENSION = new Dimension(10, 10);
-        private final Color darkColor = new Color(50, 50, 50);
-        private final Color brightColor = new Color(200, 200, 200);
         private final int squareId;
 
         SquarePanel(int squareId) {
@@ -52,17 +43,20 @@ public class BoardPanel extends JPanel {
             this.squareId = squareId;
             setPreferredSize(SQUARE_PANEL_DIMENSION);
             setBorder(BorderFactory.createLineBorder(Color.BLACK));
-//            assignSquareColor();
             addMouseListener(new MouseListener() {
                 @Override
                 public void mouseClicked(MouseEvent mouseEvent) {
-                    if(isRightMouseButton(mouseEvent) || isLeftMouseButton(mouseEvent)) {
+                    if((isRightMouseButton(mouseEvent) || isLeftMouseButton(mouseEvent)) && !match.getBoard().gameBoard[squareId].isOccupied() ){
                         SwingUtilities.invokeLater(new Runnable() {
                             @Override
                             public void run() {
                                 drawOnSquare(squareId);
+                                match.occupyGameBoardSquare(squareId);
+                                LeftPanel.switchPlayerTurnHighlight();
                             }
                         });
+                    } else {
+                        System.out.println("QUADRADO OCUPADO!");
                     }
                 }
 
@@ -88,16 +82,27 @@ public class BoardPanel extends JPanel {
             });
         }
 
-        private void assignSquareColor() {
-            setBackground(this.squareId % 2 == 0 ? brightColor : darkColor);
-        }
-
         public void drawOnThisSquare() {
-            ImageIcon icon = new ImageIcon("src/smallCross.PNG");
+            String whichIcon = match.getAlliance().isCross() ? "smallCross.PNG" : "smallCircle.PNG";
+            ImageIcon icon = new ImageIcon("src/" + whichIcon);
             JLabel symbol = new JLabel(icon);
             add(symbol);
         }
 
+    }
+
+    public void drawOnSquare(int squareId) {
+        for (SquarePanel squarePanel : boardSquares) {
+            if(squarePanel.squareId == squareId) {
+                squarePanel.drawOnThisSquare();
+            }
+        }
+        validate();
+        repaint();
+    }
+
+    public static Match getMatch() {
+        return match;
     }
 
 }

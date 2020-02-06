@@ -1,19 +1,28 @@
 package com.AdvancedTicTacToe.gui;
 
+import com.AdvancedTicTacToe.engine.Alliance;
+import com.AdvancedTicTacToe.engine.Board;
+
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 
 public class LeftPanel extends JPanel {
+
+    private static LeftPanelTop lpTop;
+    private static LeftPanelBottom lpBottom;
+
     private final int PANEL_WIDTH = (int) Math.floor(GameWindow.X_DIMENSION * 0.2);  // 20% of the width of the window
     private final int PANEL_HEIGHT = GameWindow.Y_DIMENSION;
     private final Dimension LEFT_PANEL_DIMENSION = new Dimension(PANEL_WIDTH, PANEL_HEIGHT);
     private final Dimension LEFT_PANEL_TOP_DIMENSION = new Dimension(PANEL_WIDTH, PANEL_HEIGHT/2);
     private final Dimension LEFT_PANEL_BOTTOM_DIMENSION = new Dimension(PANEL_WIDTH, PANEL_HEIGHT/2);
+    private static Border playerTurnHighlight = BorderFactory.createLineBorder(new Color(0, 255, 0));
 
     public LeftPanel() {
         super(new GridLayout(2, 1));
-        LeftPanelTop lpTop = new LeftPanelTop();
-        LeftPanelBottom lpBottom = new LeftPanelBottom();
+        lpTop = new LeftPanelTop();
+        lpBottom = new LeftPanelBottom();
         setPreferredSize(LEFT_PANEL_DIMENSION);
         add(lpTop);
         add(lpBottom);
@@ -21,26 +30,43 @@ public class LeftPanel extends JPanel {
     }
 
     private class LeftPanelTop extends JPanel {
-        //TODO correct the images
         ImageIcon crossImage = new ImageIcon("src/crossImage.PNG");
         ImageIcon circleImage = new ImageIcon("src/circleImage.PNG");
-        JLabel circleTurnLabel = new JLabel("Vez de", crossImage, JLabel.CENTER);
-        JLabel crossTurnLabel = new JLabel("Vez de", circleImage, JLabel.CENTER);
-
+        JLabel circleTurnLabel = new JLabel("Vez de", circleImage, JLabel.CENTER);
+        JLabel crossTurnLabel = new JLabel("Vez de", crossImage, JLabel.CENTER);
+        JPanel container;
 
         LeftPanelTop() {
             super(new BorderLayout());
             setPreferredSize(LEFT_PANEL_TOP_DIMENSION);
+            setup();
+        }
+
+        private void setup() {
             setBorder(BorderFactory.createLineBorder(new Color(150, 150, 150)));
             circleTurnLabel.setHorizontalTextPosition(JLabel.CENTER);
             circleTurnLabel.setVerticalTextPosition(JLabel.TOP);
             crossTurnLabel.setHorizontalTextPosition(JLabel.CENTER);
             crossTurnLabel.setVerticalTextPosition(JLabel.TOP);
-            JPanel container = new JPanel(new GridLayout(2, 1));  // The only purpose of this container is to help to layout these two labels
+            highlightPlayerTurnAlliance();
+            container = new JPanel(new GridLayout(2, 1));  // The only purpose of this container is to help to layout these two labels
             add(container, BorderLayout.CENTER);
-            container.add(circleTurnLabel);
             container.add(crossTurnLabel);
+            container.add(circleTurnLabel);
         }
+
+        private void highlightPlayerTurnAlliance() {
+            Alliance allianceToHighlight = BoardPanel.getMatch().getAlliance();
+            if(allianceToHighlight.isCross()) {
+                circleTurnLabel.setBorder(null);
+                crossTurnLabel.setBorder(playerTurnHighlight);
+            }
+            if(allianceToHighlight.isCircle()) {
+                crossTurnLabel.setBorder(null);
+                circleTurnLabel.setBorder(playerTurnHighlight);
+            }
+        }
+
     }
 
     private class LeftPanelBottom extends JPanel {
@@ -78,4 +104,7 @@ public class LeftPanel extends JPanel {
         }
     }
 
+    public static void switchPlayerTurnHighlight() {
+       lpTop.highlightPlayerTurnAlliance();
+    }
 }
