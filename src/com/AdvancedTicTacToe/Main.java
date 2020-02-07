@@ -1,6 +1,8 @@
 package com.AdvancedTicTacToe;
 
+import com.AdvancedTicTacToe.engine.Alliance;
 import com.AdvancedTicTacToe.gui.GameWindow;
+import com.AdvancedTicTacToe.gui.WinnerJFrame;
 
 import javax.swing.*;
 import java.awt.*;

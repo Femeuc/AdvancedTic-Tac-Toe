@@ -51,7 +51,11 @@ public class BoardPanel extends JPanel {
                             @Override
                             public void run() {
                                 drawOnSquare(squareId);
-                                match.occupyGameBoardSquare(squareId);
+                                if(match.occupyGameBoardSquare(squareId)) {
+                                    System.out.println("O VENCEDOR É " + match.getWinner().toString()); // If there's a winner
+                                    new WinnerJFrame(match.getWinner());
+                                    return;
+                                }
                                 LeftPanel.switchPlayerTurnHighlight();
                             }
                         });

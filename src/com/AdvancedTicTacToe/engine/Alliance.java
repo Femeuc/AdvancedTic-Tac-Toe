@@ -16,6 +16,11 @@ public enum Alliance {
         public boolean isCircle() {
             return false;
         }
+
+        @Override
+        public String toString() {
+            return "X";
+        }
     },
     CIRCLE {
         @Override
@@ -32,6 +37,11 @@ public enum Alliance {
         public boolean isCircle() {
             return true;
         }
+
+        @Override
+        public String toString() {
+            return "O";
+        }
     };
 
     public abstract Alliance getOppositeAlliance();
@@ -39,4 +49,7 @@ public enum Alliance {
     public abstract boolean isCross();
 
     public abstract boolean isCircle();
+
+    @Override
+    public abstract String toString();
 }
