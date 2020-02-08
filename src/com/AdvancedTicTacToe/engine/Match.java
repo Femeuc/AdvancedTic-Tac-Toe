@@ -10,6 +10,7 @@ public class Match {
     public boolean occupyGameBoardSquare(int squareId) {
         board.gameBoard[squareId].setAlliance(alliance);
         if(checkForWinner()) {
+            setWinner(this.getAlliance());
             return true; // True if there is a winner
         }
         setAlliance(alliance.getOppositeAlliance());
@@ -29,160 +30,70 @@ public class Match {
     }
 
     private boolean checkForWinner() {
-        checkForWinOnFirstColumn();
-        if(winner != null)
-            return true;
+        for(int i = 0; i < Board.AMOUNT_OF_COLUNS; i++) {  // This for loop analyses the columns
+            if(checkForWinnerOnColumn(i)) {
+                return true;
+            }
+        }
+        for(int i = 0; i < Board.AMOUNT_OF_ROWS; i++) {  // This for loop analyses the rows
+            if(checkForWinnerOnRow(i)) {
+                return true;
+            }
+        }
+        for(int i = 0; i < Board.AMOUNT_OF_ASCENDING_DIAGONALS; i++) {
+            if(checkForWinnerOnAscendingDiagonal(i)) {
+                return true;
+            }
+        }
         return false;
     }
 
-    private void checkForWinOnFirstColumn() {
-        int symbolsInSequenceFor1stColumn = 0;
-        int symbolsInSequenceFor2ndColumn = 0;
-        int symbolsInSequenceFor3rdColumn = 0;
-        int symbolsInSequenceFor4thColumn = 0;
-        int symbolsInSequenceFor5thColumn = 0;
-        int symbolsInSequenceFor6thColumn = 0;
-        int symbolsInSequenceFor7thColumn = 0;
-        int symbolsInSequenceFor8thColumn = 0;
-        int symbolsInSequenceFor9thColumn = 0;
-        int symbolsInSequenceFor10thColumn = 0;
-        int symbolsInSequenceFor11thColumn = 0;
-        int symbolsInSequenceFor12thColumn = 0;
-        int symbolsInSequenceFor13thColumn = 0;
-
-        for(int i = 0; i < Board.AMOUNT_OF_SQUARES; i++) {
-            if(Board.FIRST_COLUMN[i]) {
-                if(board.gameBoard[i].getAlliance() == this.alliance) {
-                    symbolsInSequenceFor1stColumn += 1;
+    private boolean checkForWinnerOnColumn(int columnNumber) {
+        int symbolsInSequence = 0; // symbol here refers to the cross symbol ( X ) or the circle symbol ( O ) which must appear in sequence for a win
+        for (int i = 0; i < Board.AMOUNT_OF_SQUARES; i++) {
+            if(Board.getColumn(columnNumber)[i]) {  // The column to be checked is determined by the columnNumber parameter
+                if(board.gameBoard[i].getAlliance() == this.getAlliance()) {
+                    symbolsInSequence += 1;
                 } else {
-                    symbolsInSequenceFor1stColumn = 0;
+                    symbolsInSequence = 0;
                 }
-                if(symbolsInSequenceFor1stColumn == 5) {
-                    setWinner(this.alliance);
-                    break;
-                }
-            } else if(Board.SECOND_COLUNN[i]) {
-                if(board.gameBoard[i].getAlliance() == this.alliance) {
-                    symbolsInSequenceFor2ndColumn += 1;
-                } else {
-                    symbolsInSequenceFor2ndColumn = 0;
-                }
-                if(symbolsInSequenceFor2ndColumn == 5) {
-                    setWinner(this.alliance);
-                    break;
-                }
-            } else if(Board.THIRD_COLUMN[i]) {
-                if(board.gameBoard[i].getAlliance() == this.alliance) {
-                    symbolsInSequenceFor3rdColumn += 1;
-                } else {
-                    symbolsInSequenceFor3rdColumn = 0;
-                }
-                if(symbolsInSequenceFor3rdColumn == 5) {
-                    setWinner(this.alliance);
-                    break;
-                }
-            } else if(Board.FOURTH_COLUMN[i]) {
-                if(board.gameBoard[i].getAlliance() == this.alliance) {
-                    symbolsInSequenceFor4thColumn += 1;
-                } else {
-                    symbolsInSequenceFor4thColumn = 0;
-                }
-                if(symbolsInSequenceFor4thColumn == 5) {
-                    setWinner(this.alliance);
-                    break;
-                }
-            } else if(Board.FIFTH_COLUMN[i]) {
-                if(board.gameBoard[i].getAlliance() == this.alliance) {
-                    symbolsInSequenceFor5thColumn += 1;
-                } else {
-                    symbolsInSequenceFor5thColumn = 0;
-                }
-                if(symbolsInSequenceFor5thColumn == 5) {
-                    setWinner(this.alliance);
-                    break;
-                }
-            } else if(Board.SIXTH_COLUMN[i]) {
-                if(board.gameBoard[i].getAlliance() == this.alliance) {
-                    symbolsInSequenceFor6thColumn += 1;
-                } else {
-                    symbolsInSequenceFor6thColumn = 0;
-                }
-                if(symbolsInSequenceFor6thColumn == 5) {
-                    setWinner(this.alliance);
-                    break;
-                }
-            } else if(Board.SEVENTH_COLUMN[i]) {
-                if(board.gameBoard[i].getAlliance() == this.alliance) {
-                    symbolsInSequenceFor7thColumn += 1;
-                } else {
-                    symbolsInSequenceFor7thColumn = 0;
-                }
-                if(symbolsInSequenceFor7thColumn == 5) {
-                    setWinner(this.alliance);
-                    break;
-                }
-            } else if(Board.EIGHTH_COLUMN[i]) {
-                if(board.gameBoard[i].getAlliance() == this.alliance) {
-                    symbolsInSequenceFor8thColumn += 1;
-                } else {
-                    symbolsInSequenceFor8thColumn = 0;
-                }
-                if(symbolsInSequenceFor8thColumn == 5) {
-                    setWinner(this.alliance);
-                    break;
-                }
-            } else if(Board.NINTH_COLUMN[i]) {
-                if(board.gameBoard[i].getAlliance() == this.alliance) {
-                    symbolsInSequenceFor9thColumn += 1;
-                } else {
-                    symbolsInSequenceFor9thColumn = 0;
-                }
-                if(symbolsInSequenceFor9thColumn == 5) {
-                    setWinner(this.alliance);
-                    break;
-                }
-            } else if(Board.TENTH_COLUMN[i]) {
-                if(board.gameBoard[i].getAlliance() == this.alliance) {
-                    symbolsInSequenceFor10thColumn += 1;
-                } else {
-                    symbolsInSequenceFor10thColumn = 0;
-                }
-                if(symbolsInSequenceFor10thColumn == 5) {
-                    setWinner(this.alliance);
-                    break;
-                }
-            } else if(Board.ELEVENTH_COLUMN[i]) {
-                if(board.gameBoard[i].getAlliance() == this.alliance) {
-                    symbolsInSequenceFor11thColumn += 1;
-                } else {
-                    symbolsInSequenceFor11thColumn = 0;
-                }
-                if(symbolsInSequenceFor11thColumn == 5) {
-                    setWinner(this.alliance);
-                    break;
-                }
-            } else if(Board.TWELFTH_COLUMN[i]) {
-                if(board.gameBoard[i].getAlliance() == this.alliance) {
-                    symbolsInSequenceFor12thColumn += 1;
-                } else {
-                    symbolsInSequenceFor12thColumn = 0;
-                }
-                if(symbolsInSequenceFor12thColumn == 5) {
-                    setWinner(this.alliance);
-                    break;
-                }
-            } else if(Board.THIRTEENTH_COLUMN[i]) {
-                if(board.gameBoard[i].getAlliance() == this.alliance) {
-                    symbolsInSequenceFor13thColumn += 1;
-                } else {
-                    symbolsInSequenceFor13thColumn = 0;
-                }
-                if(symbolsInSequenceFor13thColumn == 5) {
-                    setWinner(this.alliance);
-                    break;
-                }
+                if(symbolsInSequence == 5)
+                    return true;
             }
         }
+        return false;
+    }
+
+    private boolean checkForWinnerOnRow(int rowNumber) {
+        int symbolsInSequence = 0;
+        for(int i = 0; i < Board.AMOUNT_OF_SQUARES; i++) {
+            if(Board.getRow(rowNumber)[i]) {
+                if(board.gameBoard[i].getAlliance() == this.getAlliance()) {
+                    symbolsInSequence += 1;
+                } else {
+                    symbolsInSequence = 0;
+                }
+                if(symbolsInSequence == 5)
+                    return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean checkForWinnerOnAscendingDiagonal(int ascendingDiagonalNumber) {
+        int symbolsInSequence = 0;
+        for(int i = 0; i < Board.AMOUNT_OF_SQUARES; i++) {
+            if(Board.getAscendingDiagonal(ascendingDiagonalNumber)[i]) {
+                if(board.gameBoard[i].getAlliance() == this.getAlliance()) {
+                    symbolsInSequence += 1;
+                } else {
+                    symbolsInSequence = 0;
+                }
+                if(symbolsInSequence == 5)
+                    return true;
+            }
+        }
+        return false;
     }
 
     public Alliance getWinner() {
