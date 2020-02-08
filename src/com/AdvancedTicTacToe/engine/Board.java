@@ -5,7 +5,8 @@ public class Board {
     public final static int AMOUNT_OF_SQUARES = calculateAmountOfSquares();
     public final static int AMOUNT_OF_ROWS = 13;
     public final static int AMOUNT_OF_COLUNS = 13;
-    public final static int AMOUNT_OF_ASCENDING_DIAGONALS = 17;  // There is a relation between the amount of ascending rows and the number of rows and columns
+    public final static int AMOUNT_OF_ASCENDING_DIAGONALS = 17;  // There is a relation between the amount of ascending and
+    public static final int AMOUNT_OF_DESCENDING_DIAGONALS = 17; // descending diagonals and the number of rows and columns
 
     public Square[] gameBoard;
 
@@ -37,23 +38,41 @@ public class Board {
     public static final boolean[] TWELFTH_ROW = initRow(143);
     public static final boolean[] THIRTEENTH_ROW = initRow(156);
 
-    public static final boolean[] FIRST_ASCENDING_DIAGONAL = initDiagonal(52);
-    public static final boolean[] SECOND_ASCENDING_DIAGONAL = initDiagonal(65);
-    public static final boolean[] THIRD_ASCENDING_DIAGONAL = initDiagonal(78);
-    public static final boolean[] FOURTH_ASCENDING_DIAGONAL = initDiagonal(91);
-    public static final boolean[] FIFTH_ASCENDING_DIAGONAL = initDiagonal(104);
-    public static final boolean[] SIXTH_ASCENDING_DIAGONAL = initDiagonal(117);
-    public static final boolean[] SEVENTH_ASCENDING_DIAGONAL = initDiagonal(130);
-    public static final boolean[] EIGHTH_ASCENDING_DIAGONAL = initDiagonal(143);
-    public static final boolean[] NINTH_ASCENDING_DIAGONAL = initDiagonal(156);
-    public static final boolean[] TENTH_ASCENDING_DIAGONAL = initDiagonal(157);
-    public static final boolean[] ELEVENTH_ASCENDING_DIAGONAL = initDiagonal(158);
-    public static final boolean[] TWELFTH_ASCENDING_DIAGONAL = initDiagonal(159);
-    public static final boolean[] THIRTEENTH_ASCENDING_DIAGONAL = initDiagonal(160);
-    public static final boolean[] FOURTEENTH_ASCENDING_DIAGONAL = initDiagonal(161);
-    public static final boolean[] FIFTEENTH_ASCENDING_DIAGONAL = initDiagonal(162);
-    public static final boolean[] SIXTEENTH_ASCENDING_DIAGONAL = initDiagonal(163);
-    public static final boolean[] SEVENTEENTH_ASCENDING_DIAGONAL = initDiagonal(164);
+    public static final boolean[] FIRST_ASCENDING_DIAGONAL = initAscendingDiagonal(52);
+    public static final boolean[] SECOND_ASCENDING_DIAGONAL = initAscendingDiagonal(65);
+    public static final boolean[] THIRD_ASCENDING_DIAGONAL = initAscendingDiagonal(78);
+    public static final boolean[] FOURTH_ASCENDING_DIAGONAL = initAscendingDiagonal(91);
+    public static final boolean[] FIFTH_ASCENDING_DIAGONAL = initAscendingDiagonal(104);
+    public static final boolean[] SIXTH_ASCENDING_DIAGONAL = initAscendingDiagonal(117);
+    public static final boolean[] SEVENTH_ASCENDING_DIAGONAL = initAscendingDiagonal(130);
+    public static final boolean[] EIGHTH_ASCENDING_DIAGONAL = initAscendingDiagonal(143);
+    public static final boolean[] NINTH_ASCENDING_DIAGONAL = initAscendingDiagonal(156);
+    public static final boolean[] TENTH_ASCENDING_DIAGONAL = initAscendingDiagonal(157);
+    public static final boolean[] ELEVENTH_ASCENDING_DIAGONAL = initAscendingDiagonal(158);
+    public static final boolean[] TWELFTH_ASCENDING_DIAGONAL = initAscendingDiagonal(159);
+    public static final boolean[] THIRTEENTH_ASCENDING_DIAGONAL = initAscendingDiagonal(160);
+    public static final boolean[] FOURTEENTH_ASCENDING_DIAGONAL = initAscendingDiagonal(161);
+    public static final boolean[] FIFTEENTH_ASCENDING_DIAGONAL = initAscendingDiagonal(162);
+    public static final boolean[] SIXTEENTH_ASCENDING_DIAGONAL = initAscendingDiagonal(163);
+    public static final boolean[] SEVENTEENTH_ASCENDING_DIAGONAL = initAscendingDiagonal(164);
+
+    public static final boolean[] FIRST_DESCENDING_DIAGONAL = initDescendingDiagonal(104);
+    public static final boolean[] SECOND_DESCENDING_DIAGONAL = initDescendingDiagonal(91);
+    public static final boolean[] THIRD_DESCENDING_DIAGONAL = initDescendingDiagonal(78);
+    public static final boolean[] FOURTH_DESCENDING_DIAGONAL = initDescendingDiagonal(65);
+    public static final boolean[] FIFTH_DESCENDING_DIAGONAL = initDescendingDiagonal(52);
+    public static final boolean[] SIXTH_DESCENDING_DIAGONAL = initDescendingDiagonal(39);
+    public static final boolean[] SEVENTH_DESCENDING_DIAGONAL = initDescendingDiagonal(26);
+    public static final boolean[] EIGHTH_DESCENDING_DIAGONAL = initDescendingDiagonal(13);
+    public static final boolean[] NINTH_DESCENDING_DIAGONAL = initDescendingDiagonal(0);
+    public static final boolean[] TENTH_DESCENDING_DIAGONAL = initDescendingDiagonal(1);
+    public static final boolean[] ELEVENTH_DESCENDING_DIAGONAL = initDescendingDiagonal(2);
+    public static final boolean[] TWELFTH_DESCENDING_DIAGONAL = initDescendingDiagonal(3);
+    public static final boolean[] THIRTEENTH_DESCENDING_DIAGONAL = initDescendingDiagonal(4);
+    public static final boolean[] FOURTEENTH_DESCENDING_DIAGONAL = initDescendingDiagonal(5);
+    public static final boolean[] FIFTEENTH_DESCENDING_DIAGONAL = initDescendingDiagonal(6);
+    public static final boolean[] SIXTEENTH_DESCENDING_DIAGONAL = initDescendingDiagonal(7);
+    public static final boolean[] SEVENTEENTH_DESCENDING_DIAGONAL = initDescendingDiagonal(8);
 
     public Board() {
         this.gameBoard = initBoard();
@@ -90,14 +109,24 @@ public class Board {
         return row;
     }
 
-    private static boolean[] initDiagonal(int diagonalStartCoordinate) {
+    private static boolean[] initAscendingDiagonal(int ascendingDiagonalStartCoordinate) {
         final boolean[] ascendingDiagonal = new boolean[AMOUNT_OF_SQUARES];
-        ascendingDiagonal[diagonalStartCoordinate] = true;
+        ascendingDiagonal[ascendingDiagonalStartCoordinate] = true;
         do {
-            diagonalStartCoordinate -= (AMOUNT_OF_ROWS - 1); // TODO maybe it is better to get rid of these parenthesis
-            ascendingDiagonal[diagonalStartCoordinate] = true;
-        } while(!getRow(0)[diagonalStartCoordinate] && !getColumn(AMOUNT_OF_COLUNS - 1)[diagonalStartCoordinate]);
+            ascendingDiagonalStartCoordinate -= (AMOUNT_OF_ROWS - 1); // TODO maybe it is better to get rid of these parenthesis
+            ascendingDiagonal[ascendingDiagonalStartCoordinate] = true;
+        } while(!getRow(0)[ascendingDiagonalStartCoordinate] && !getColumn(AMOUNT_OF_COLUNS - 1)[ascendingDiagonalStartCoordinate]);
         return ascendingDiagonal;
+    }
+
+    private static boolean[] initDescendingDiagonal(int descendingDiagonalStartCoordinate) {
+        final boolean[] descendingDiagonal = new boolean[AMOUNT_OF_SQUARES];
+        descendingDiagonal[descendingDiagonalStartCoordinate] = true;
+        do {
+            descendingDiagonalStartCoordinate += (AMOUNT_OF_ROWS + 1); // TODO maybe it is better to get rid of these parenthesis
+            descendingDiagonal[descendingDiagonalStartCoordinate] = true;
+        } while(!getRow(AMOUNT_OF_ROWS - 1)[descendingDiagonalStartCoordinate] && !getColumn(AMOUNT_OF_COLUNS - 1)[descendingDiagonalStartCoordinate]);
+        return descendingDiagonal;
     }
 
     public static boolean[] getColumn(int columnNUmber) {
@@ -204,6 +233,47 @@ public class Board {
                 return SEVENTEENTH_ASCENDING_DIAGONAL;
             default:
                 throw new RuntimeException("Invalid ascending diagonal number");
+        }
+    }
+
+    public static boolean[] getDescendingDiagonal(int descendingDiagonalNumber) {
+        switch (descendingDiagonalNumber) {
+            case 0:
+                return FIRST_DESCENDING_DIAGONAL;
+            case 1:
+                return SECOND_DESCENDING_DIAGONAL;
+            case 2:
+                return THIRD_DESCENDING_DIAGONAL;
+            case 3:
+                return FOURTH_DESCENDING_DIAGONAL;
+            case 4:
+                return FIFTH_DESCENDING_DIAGONAL;
+            case 5:
+                return SIXTH_DESCENDING_DIAGONAL;
+            case 6:
+                return SEVENTH_DESCENDING_DIAGONAL;
+            case 7:
+                return EIGHTH_DESCENDING_DIAGONAL;
+            case 8:
+                return NINTH_DESCENDING_DIAGONAL;
+            case 9:
+                return TENTH_DESCENDING_DIAGONAL;
+            case 10:
+                return ELEVENTH_DESCENDING_DIAGONAL;
+            case 11:
+                return TWELFTH_DESCENDING_DIAGONAL;
+            case 12:
+                return THIRTEENTH_DESCENDING_DIAGONAL;
+            case 13:
+                return FOURTEENTH_DESCENDING_DIAGONAL;
+            case 14:
+                return FIFTEENTH_DESCENDING_DIAGONAL;
+            case 15:
+                return SIXTEENTH_DESCENDING_DIAGONAL;
+            case 16:
+                return SEVENTEENTH_DESCENDING_DIAGONAL;
+            default:
+                throw new RuntimeException("Invalid descending diagonal number");
         }
     }
 

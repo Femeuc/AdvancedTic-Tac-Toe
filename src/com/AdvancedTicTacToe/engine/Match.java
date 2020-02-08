@@ -40,8 +40,13 @@ public class Match {
                 return true;
             }
         }
-        for(int i = 0; i < Board.AMOUNT_OF_ASCENDING_DIAGONALS; i++) {
+        for(int i = 0; i < Board.AMOUNT_OF_ASCENDING_DIAGONALS; i++) {  // This for loop analyses the ascending diagonals
             if(checkForWinnerOnAscendingDiagonal(i)) {
+                return true;
+            }
+        }
+        for(int i = 0; i < Board.AMOUNT_OF_DESCENDING_DIAGONALS; i++) { // This for loop analyses the descending diagonals
+            if(checkForWinnerOnDescendingDiagonal(i)) {
                 return true;
             }
         }
@@ -84,6 +89,22 @@ public class Match {
         int symbolsInSequence = 0;
         for(int i = 0; i < Board.AMOUNT_OF_SQUARES; i++) {
             if(Board.getAscendingDiagonal(ascendingDiagonalNumber)[i]) {
+                if(board.gameBoard[i].getAlliance() == this.getAlliance()) {
+                    symbolsInSequence += 1;
+                } else {
+                    symbolsInSequence = 0;
+                }
+                if(symbolsInSequence == 5)
+                    return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean checkForWinnerOnDescendingDiagonal(int descendingDiagonalNumber) {
+        int symbolsInSequence = 0;
+        for(int i = 0; i < Board.AMOUNT_OF_SQUARES; i++) {
+            if(Board.getDescendingDiagonal(descendingDiagonalNumber)[i]) {
                 if(board.gameBoard[i].getAlliance() == this.getAlliance()) {
                     symbolsInSequence += 1;
                 } else {
