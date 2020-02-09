@@ -3,8 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="724011c0-0c46-4535-830b-98302003eb6a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/AdvancedTicTacToe/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/AdvancedTicTacToe/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/AdvancedTicTacToe/engine/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/AdvancedTicTacToe/engine/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/AdvancedTicTacToe/engine/Match.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/AdvancedTicTacToe/engine/Match.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/AdvancedTicTacToe/gui/BoardPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/AdvancedTicTacToe/gui/BoardPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/AdvancedTicTacToe/gui/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/AdvancedTicTacToe/gui/GameWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/AdvancedTicTacToe/gui/LeftPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/AdvancedTicTacToe/gui/LeftPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,51 +111,51 @@
       <screen x="0" y="0" width="1360" height="768" />
     </state>
     <state x="410" y="130" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1360.768@0.0.1360.768" timestamp="1580924118101" />
-    <state width="1316" height="187" key="GridCell.Tab.0.bottom" timestamp="1581185225601">
+    <state width="1316" height="187" key="GridCell.Tab.0.bottom" timestamp="1581262853614">
       <screen x="0" y="0" width="1360" height="768" />
     </state>
     <state width="1236" height="187" key="GridCell.Tab.0.bottom/0.0.1280.768@0.0.1280.768" timestamp="1579903659419" />
-    <state width="1316" height="187" key="GridCell.Tab.0.bottom/0.0.1360.768@0.0.1360.768" timestamp="1581185225601" />
-    <state width="1316" height="187" key="GridCell.Tab.0.center" timestamp="1581185225600">
+    <state width="1316" height="187" key="GridCell.Tab.0.bottom/0.0.1360.768@0.0.1360.768" timestamp="1581262853614" />
+    <state width="1316" height="187" key="GridCell.Tab.0.center" timestamp="1581262853614">
       <screen x="0" y="0" width="1360" height="768" />
     </state>
     <state width="1236" height="187" key="GridCell.Tab.0.center/0.0.1280.768@0.0.1280.768" timestamp="1579903659419" />
-    <state width="1316" height="187" key="GridCell.Tab.0.center/0.0.1360.768@0.0.1360.768" timestamp="1581185225600" />
-    <state width="1316" height="187" key="GridCell.Tab.0.left" timestamp="1581185225600">
+    <state width="1316" height="187" key="GridCell.Tab.0.center/0.0.1360.768@0.0.1360.768" timestamp="1581262853614" />
+    <state width="1316" height="187" key="GridCell.Tab.0.left" timestamp="1581262853614">
       <screen x="0" y="0" width="1360" height="768" />
     </state>
     <state width="1236" height="187" key="GridCell.Tab.0.left/0.0.1280.768@0.0.1280.768" timestamp="1579903659419" />
-    <state width="1316" height="187" key="GridCell.Tab.0.left/0.0.1360.768@0.0.1360.768" timestamp="1581185225600" />
-    <state width="1316" height="187" key="GridCell.Tab.0.right" timestamp="1581185225600">
+    <state width="1316" height="187" key="GridCell.Tab.0.left/0.0.1360.768@0.0.1360.768" timestamp="1581262853614" />
+    <state width="1316" height="187" key="GridCell.Tab.0.right" timestamp="1581262853614">
       <screen x="0" y="0" width="1360" height="768" />
     </state>
     <state width="1236" height="187" key="GridCell.Tab.0.right/0.0.1280.768@0.0.1280.768" timestamp="1579903659419" />
-    <state width="1316" height="187" key="GridCell.Tab.0.right/0.0.1360.768@0.0.1360.768" timestamp="1581185225600" />
-    <state width="620" height="226" key="GridCell.Tab.1.bottom" timestamp="1581017363453">
+    <state width="1316" height="187" key="GridCell.Tab.0.right/0.0.1360.768@0.0.1360.768" timestamp="1581262853614" />
+    <state width="1316" height="232" key="GridCell.Tab.1.bottom" timestamp="1581262558465">
       <screen x="0" y="0" width="1360" height="768" />
     </state>
-    <state width="620" height="226" key="GridCell.Tab.1.bottom/0.0.1360.768@0.0.1360.768" timestamp="1581017363453" />
-    <state width="620" height="226" key="GridCell.Tab.1.center" timestamp="1581017363452">
+    <state width="1316" height="232" key="GridCell.Tab.1.bottom/0.0.1360.768@0.0.1360.768" timestamp="1581262558465" />
+    <state width="1316" height="232" key="GridCell.Tab.1.center" timestamp="1581262558465">
       <screen x="0" y="0" width="1360" height="768" />
     </state>
-    <state width="620" height="226" key="GridCell.Tab.1.center/0.0.1360.768@0.0.1360.768" timestamp="1581017363452" />
-    <state width="620" height="226" key="GridCell.Tab.1.left" timestamp="1581017363452">
+    <state width="1316" height="232" key="GridCell.Tab.1.center/0.0.1360.768@0.0.1360.768" timestamp="1581262558465" />
+    <state width="1316" height="232" key="GridCell.Tab.1.left" timestamp="1581262558465">
       <screen x="0" y="0" width="1360" height="768" />
     </state>
-    <state width="620" height="226" key="GridCell.Tab.1.left/0.0.1360.768@0.0.1360.768" timestamp="1581017363452" />
-    <state width="620" height="226" key="GridCell.Tab.1.right" timestamp="1581017363452">
+    <state width="1316" height="232" key="GridCell.Tab.1.left/0.0.1360.768@0.0.1360.768" timestamp="1581262558465" />
+    <state width="1316" height="232" key="GridCell.Tab.1.right" timestamp="1581262558465">
       <screen x="0" y="0" width="1360" height="768" />
     </state>
-    <state width="620" height="226" key="GridCell.Tab.1.right/0.0.1360.768@0.0.1360.768" timestamp="1581017363452" />
+    <state width="1316" height="232" key="GridCell.Tab.1.right/0.0.1360.768@0.0.1360.768" timestamp="1581262558465" />
     <state width="688" height="392" key="XDebugger.FullValuePopup" timestamp="1581013088873">
       <screen x="0" y="0" width="1360" height="768" />
     </state>
     <state width="688" height="392" key="XDebugger.FullValuePopup/0.0.1360.768@0.0.1360.768" timestamp="1581013088873" />
-    <state x="356" y="206" key="com.intellij.ide.util.TipDialog" timestamp="1581084648946">
+    <state x="356" y="206" key="com.intellij.ide.util.TipDialog" timestamp="1581258989180">
       <screen x="0" y="0" width="1360" height="768" />
     </state>
     <state x="335" y="206" key="com.intellij.ide.util.TipDialog/0.0.1280.768@0.0.1280.768" timestamp="1579873163615" />
-    <state x="356" y="206" key="com.intellij.ide.util.TipDialog/0.0.1360.768@0.0.1360.768" timestamp="1581084648946" />
+    <state x="356" y="206" key="com.intellij.ide.util.TipDialog/0.0.1360.768@0.0.1360.768" timestamp="1581258989180" />
     <state x="489" y="300" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1580831177383">
       <screen x="0" y="0" width="1360" height="768" />
     </state>
@@ -162,6 +166,8 @@
       <configuration name="Application">
         <watch expression="lpTop" language="JAVA" />
         <watch expression="allianceToHighlight" language="JAVA" />
+        <watch expression="LeftPanel" language="JAVA" />
+        <watch expression="leftPanel" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>

@@ -74,8 +74,13 @@ public class Board {
     public static final boolean[] SIXTEENTH_DESCENDING_DIAGONAL = initDescendingDiagonal(7);
     public static final boolean[] SEVENTEENTH_DESCENDING_DIAGONAL = initDescendingDiagonal(8);
 
+    private int unoccupiedSquaresNumber;
+    private int occupiedSquaresNumber;
+
     public Board() {
         this.gameBoard = initBoard();
+        unoccupiedSquaresNumber = AMOUNT_OF_SQUARES;
+        occupiedSquaresNumber = 0;
     }
 
     public static int calculateAmountOfSquares() {
@@ -275,6 +280,22 @@ public class Board {
             default:
                 throw new RuntimeException("Invalid descending diagonal number");
         }
+    }
+
+    public int getUnoccupiedSquaresNumber() {
+        return unoccupiedSquaresNumber;
+    }
+
+    public void setUnoccupiedSquaresNumber(int updateValue) {
+        unoccupiedSquaresNumber = updateValue;
+    }
+
+    public int getOccupiedSquaresNumber() {
+        return occupiedSquaresNumber;
+    }
+
+    public void setOccupiedSquaresNumber(int updateValue) {
+        occupiedSquaresNumber = updateValue;
     }
 
 }

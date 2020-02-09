@@ -124,4 +124,17 @@ public class Match {
     public void setWinner(Alliance alliance) {
         this.winner = alliance;
     }
+
+    public int getUnoccupiedSquaresNumber() {
+        return Board.AMOUNT_OF_SQUARES - getOccupiedSquaresNumber();
+    }
+
+    public int getOccupiedSquaresNumber() {
+        int occupiedNumber = 0;
+        for (int i = 0; i < Board.AMOUNT_OF_SQUARES; i++) {
+            if(board.gameBoard[i].isOccupied())
+                occupiedNumber += 1;
+        }
+        return occupiedNumber;
+    }
 }

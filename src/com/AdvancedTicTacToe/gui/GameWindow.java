@@ -19,8 +19,8 @@ public class GameWindow {
         this.gameFrame.setLayout(new BorderLayout());
         this.gameFrame.setSize(WINDOW_DIMENSION);
         this.gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.boardPanel = new BoardPanel();
         this.leftPanel = new LeftPanel();
+        this.boardPanel = new BoardPanel();
         this.gameFrame.add(boardPanel, BorderLayout.CENTER);
         this.gameFrame.add(leftPanel, BorderLayout.WEST);
         this.gameFrame.setResizable(false);

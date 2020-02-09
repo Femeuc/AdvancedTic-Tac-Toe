@@ -30,6 +30,7 @@ public class BoardPanel extends JPanel {
             this.boardSquares.add(squarePanel);
             add(squarePanel);
         }
+        LeftPanel.updateLeftPanelBottom( Integer.toString(match.getUnoccupiedSquaresNumber()), Integer.toString(match.getOccupiedSquaresNumber()));
         setPreferredSize(BOARD_PANEL_DIMENSION);
         validate();
     }
@@ -54,8 +55,8 @@ public class BoardPanel extends JPanel {
                                 if(match.occupyGameBoardSquare(squareId)) {
                                     System.out.println("O VENCEDOR É " + match.getWinner().toString()); // If there's a winner
                                     new WinnerJFrame(match.getWinner());
-                                    return;
                                 }
+                                LeftPanel.updateLeftPanelBottom( Integer.toString(match.getUnoccupiedSquaresNumber()), Integer.toString(match.getOccupiedSquaresNumber()));
                                 LeftPanel.switchPlayerTurnHighlight();
                             }
                         });

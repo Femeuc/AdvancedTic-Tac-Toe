@@ -18,7 +18,7 @@ public class LeftPanel extends JPanel {
     private final Dimension LEFT_PANEL_TOP_DIMENSION = new Dimension(PANEL_WIDTH, PANEL_HEIGHT/2);
     private final Dimension LEFT_PANEL_BOTTOM_DIMENSION = new Dimension(PANEL_WIDTH, PANEL_HEIGHT/2);
     private static Border playerTurnHighlight = BorderFactory.createLineBorder(new Color(0, 255, 0));
-
+//    private static String unnocupiedSquaresNumber = "";  TODO maybe I should delete this
     public LeftPanel() {
         super(new GridLayout(2, 1));
         lpTop = new LeftPanelTop();
@@ -70,10 +70,10 @@ public class LeftPanel extends JPanel {
     }
 
     private class LeftPanelBottom extends JPanel {
-        JLabel unoccupiedSquaresLabel = new JLabel("<html><p style='text-align:center;'>Quadrados <br>vazios</p></html>");
-        JTextField unoccupiedSquaresField = new JTextField();
-        JLabel occupiedSquaresLabel = new JLabel("<html><p style='text-align:center;'>Quadrados <br>ocupados</p></html>");
-        JTextField occupiedSquaresField = new JTextField();
+        private JLabel unoccupiedSquaresLabel = new JLabel("<html><p style='text-align:center;'>Quadrados <br>vazios</p></html>");
+        private JTextField unoccupiedSquaresField = new JTextField();
+        private JLabel occupiedSquaresLabel = new JLabel("<html><p style='text-align:center;'>Quadrados <br>ocupados</p></html>");
+        private JTextField occupiedSquaresField = new JTextField();
 
         LeftPanelBottom() {
             super(new BorderLayout());
@@ -102,9 +102,24 @@ public class LeftPanel extends JPanel {
             container3.add(occupiedSquaresField, c);
             add(container1, BorderLayout.CENTER);
         }
+
+        public void setUnoccupiedSquaresField(String str) {
+            this.unoccupiedSquaresField.setText(str);
+            this.unoccupiedSquaresField.setHorizontalAlignment(JTextField.CENTER);
+        }
+
+        public void setOccupiedSquaresField(String str) {
+            this.occupiedSquaresField.setText(str);
+            this.occupiedSquaresField.setHorizontalAlignment(JTextField.CENTER);
+        }
     }
 
     public static void switchPlayerTurnHighlight() {
        lpTop.highlightPlayerTurnAlliance();
+    }
+
+    public static void updateLeftPanelBottom(String unnocupiedSquaresNumber, String occupiedSquaresNumber) {
+        lpBottom.setUnoccupiedSquaresField(unnocupiedSquaresNumber);
+        lpBottom.setOccupiedSquaresField(occupiedSquaresNumber);
     }
 }
