@@ -3,12 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="724011c0-0c46-4535-830b-98302003eb6a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/AdvancedTicTacToe/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/AdvancedTicTacToe/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/AdvancedTicTacToe/engine/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/AdvancedTicTacToe/engine/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/AdvancedTicTacToe/engine/CirclePlayer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/AdvancedTicTacToe/engine/CrossPlayer.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/AdvancedTicTacToe/engine/Match.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/AdvancedTicTacToe/engine/Match.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/AdvancedTicTacToe/gui/BoardPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/AdvancedTicTacToe/gui/BoardPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/AdvancedTicTacToe/engine/Player.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/AdvancedTicTacToe/gui/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/AdvancedTicTacToe/gui/GameWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/AdvancedTicTacToe/gui/LeftPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/AdvancedTicTacToe/gui/LeftPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/AdvancedTicTacToe/gui/WinnerJFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/AdvancedTicTacToe/gui/WinnerJFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,26 +112,26 @@
       <screen x="0" y="0" width="1360" height="768" />
     </state>
     <state x="410" y="130" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1360.768@0.0.1360.768" timestamp="1580924118101" />
-    <state width="1316" height="187" key="GridCell.Tab.0.bottom" timestamp="1581262853614">
+    <state width="1316" height="187" key="GridCell.Tab.0.bottom" timestamp="1581264196087">
       <screen x="0" y="0" width="1360" height="768" />
     </state>
     <state width="1236" height="187" key="GridCell.Tab.0.bottom/0.0.1280.768@0.0.1280.768" timestamp="1579903659419" />
-    <state width="1316" height="187" key="GridCell.Tab.0.bottom/0.0.1360.768@0.0.1360.768" timestamp="1581262853614" />
-    <state width="1316" height="187" key="GridCell.Tab.0.center" timestamp="1581262853614">
+    <state width="1316" height="187" key="GridCell.Tab.0.bottom/0.0.1360.768@0.0.1360.768" timestamp="1581264196087" />
+    <state width="1316" height="187" key="GridCell.Tab.0.center" timestamp="1581264196087">
       <screen x="0" y="0" width="1360" height="768" />
     </state>
     <state width="1236" height="187" key="GridCell.Tab.0.center/0.0.1280.768@0.0.1280.768" timestamp="1579903659419" />
-    <state width="1316" height="187" key="GridCell.Tab.0.center/0.0.1360.768@0.0.1360.768" timestamp="1581262853614" />
-    <state width="1316" height="187" key="GridCell.Tab.0.left" timestamp="1581262853614">
+    <state width="1316" height="187" key="GridCell.Tab.0.center/0.0.1360.768@0.0.1360.768" timestamp="1581264196087" />
+    <state width="1316" height="187" key="GridCell.Tab.0.left" timestamp="1581264196087">
       <screen x="0" y="0" width="1360" height="768" />
     </state>
     <state width="1236" height="187" key="GridCell.Tab.0.left/0.0.1280.768@0.0.1280.768" timestamp="1579903659419" />
-    <state width="1316" height="187" key="GridCell.Tab.0.left/0.0.1360.768@0.0.1360.768" timestamp="1581262853614" />
-    <state width="1316" height="187" key="GridCell.Tab.0.right" timestamp="1581262853614">
+    <state width="1316" height="187" key="GridCell.Tab.0.left/0.0.1360.768@0.0.1360.768" timestamp="1581264196087" />
+    <state width="1316" height="187" key="GridCell.Tab.0.right" timestamp="1581264196087">
       <screen x="0" y="0" width="1360" height="768" />
     </state>
     <state width="1236" height="187" key="GridCell.Tab.0.right/0.0.1280.768@0.0.1280.768" timestamp="1579903659419" />
-    <state width="1316" height="187" key="GridCell.Tab.0.right/0.0.1360.768@0.0.1360.768" timestamp="1581262853614" />
+    <state width="1316" height="187" key="GridCell.Tab.0.right/0.0.1360.768@0.0.1360.768" timestamp="1581264196087" />
     <state width="1316" height="232" key="GridCell.Tab.1.bottom" timestamp="1581262558465">
       <screen x="0" y="0" width="1360" height="768" />
     </state>

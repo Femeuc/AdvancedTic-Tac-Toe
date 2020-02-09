@@ -24,6 +24,8 @@ public class GameWindow {
         this.gameFrame.add(boardPanel, BorderLayout.CENTER);
         this.gameFrame.add(leftPanel, BorderLayout.WEST);
         this.gameFrame.setResizable(false);
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        this.gameFrame.setLocation(dim.width/2 - gameFrame.getSize().width/2, dim.height/2 - gameFrame.getSize().height/2);
         this.gameFrame.setVisible(true);
     }
 }

@@ -1,8 +1,6 @@
 package com.AdvancedTicTacToe.engine;
 
 public class Match {
-    private Player crossPlayer = new CrossPlayer();
-    private Player circlePlayer = new CirclePlayer();
     private Alliance alliance = Alliance.CROSS;
     private Board board = new Board();
     private Alliance winner = null;

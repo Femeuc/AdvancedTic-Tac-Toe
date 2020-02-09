@@ -21,6 +21,9 @@ public class WinnerJFrame {
         this.winnerPanel = new MessagePanel(winner);
         this.winnerFrame.add(winnerPanel, BorderLayout.CENTER);
         this.winnerFrame.setResizable(false);
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        this.winnerFrame.setLocation(dim.width/2 - winnerFrame.getSize().width/2, dim.height/2 - winnerFrame.getSize().height/2);
+        this.winnerFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.winnerFrame.setVisible(true);
     }
 
